@@ -1,6 +1,6 @@
-#import "../lib.typ": ens-report
+#import "../lib.typ": ens-internship
 
-#show: ens-report.with(
+#show: ens-internship.with(
   title: "A simple report template created with Typst",
   subtitle: "Master's degree final-year internship",
   lang: "en",

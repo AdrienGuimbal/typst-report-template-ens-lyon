@@ -1,7 +1,7 @@
 #let blue-light-ens = rgb("#8cc8d2")
 #let blue-dark-ens = rgb("#00778b")
 
-#let ens-report(
+#let ens-internship(
   title: "",
   subtitle: "",
   lang: "en",
