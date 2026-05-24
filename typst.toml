@@ -1,5 +1,5 @@
 [package]
-name = "typst-report-template-ens"
+name = "ens-internship"
 version = "1.0"
 entrypoint = "lib.typ"
 authors = ["Gavroche"]
