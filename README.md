@@ -1,4 +1,4 @@
-# ens-internship
+# normale-internship
 An unofficial template for internship reports at ENS Paris-Saclay.
 
 ## Usage
