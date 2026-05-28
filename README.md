@@ -4,7 +4,7 @@ An unofficial template for internship reports at ENS Paris-Saclay.
 ## Usage
 
 ```typ
-#show: ens-internship.with(
+#show: normale-internship.with(
   title: "A simple report template created with Typst",
   subtitle: "Master's degree final-year internship",
   lang: "en",
