@@ -52,7 +52,7 @@
           columns: (1fr, 1fr),
           align: (left, right),
           image("assets/Logo_ENS_PS.jpg", height: 50pt),
-          image(logo, height: 50pt)
+          logo
         )
       }
 
