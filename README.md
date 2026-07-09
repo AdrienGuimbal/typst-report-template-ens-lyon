@@ -1,16 +1,18 @@
 # normale-internship
-An unofficial template for internship reports at ENS Paris-Saclay.
+An unofficial template for internship reports at ENS de Lyon.
 
 ## Usage
 
 ```typ
-#show: normale-internship.with(
+#show: ensl-internship.with(
   title: "A simple report template created with Typst",
   subtitle: "Master's degree final-year internship",
+  keywords: ("Kerlyon", "Lorem", "Ipsum"),
+  abstract: lorem(25),
   lang: "en",
   authors: ("Author 1", "Author 2"),
   mentors: ("Mentors 1", "Mentors 2"),
-  logo: "template/logo.png",
+  logo: image("../assets/Logo_CNRS.png", height: 50pt),
   place: "Place of the intership",
   date: "Beginning date",
   table-of-contents: true,
@@ -25,6 +27,8 @@ An unofficial template for internship reports at ENS Paris-Saclay.
 | title             | [string](https://typst.app/docs/reference/foundations/str/)          | The title of the internship report         |
 | subtitle          | [string](https://typst.app/docs/reference/foundations/str/)          | The subtitle of the internship report      |
 | lang              | [string](https://typst.app/docs/reference/foundations/str/)          | French ("fr") or English ("en")            |
+| keywords          | [array](https://typst.app/docs/reference/foundations/array/)         | List of keywords                           |
+| abstract          | [string](https://typst.app/docs/reference/foundations/str/)          | Abstract                          |
 | authors           | [string](https://typst.app/docs/reference/foundations/str/) or [array](https://typst.app/docs/reference/foundations/array/) | A string if there is one author and an array if there are many authors |
 | mentors           | [string](https://typst.app/docs/reference/foundations/str/) or [array](https://typst.app/docs/reference/foundations/array/) | A string if there is one mentors and an array if there are many mentors |
 | logo              | [content](https://typst.app/docs/reference/foundations/content/)  or [none](https://typst.app/docs/reference/foundations/none/)  | The logo, it is recommand to use a height of 50pt

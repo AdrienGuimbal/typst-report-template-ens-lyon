@@ -1,10 +1,12 @@
-harry:
-    type: Book
-    title: Harry Potter and the Order of the Phoenix
-    author: Rowling, J. K.
-    volume: 5
-    page-total: 768
-    date: 2003-06-21
+code:    
+    type: book
+    title: "Code: The Hidden Language of Computer Hardware and Software"
+    author: Petzold, Charles
+    edition: 1
+    date: 1999-09-29
+    publisher: Microsoft Press
+    isbn: "978-0137909292"
+
 
 electronic:
     type: Web

@@ -1,12 +1,14 @@
-#import "../lib.typ": normale-internship
+#import "../lib.typ": ensl-internship
 
-#show: normale-internship.with(
+#show: ensl-internship.with(
   title: "A simple report template created with Typst",
   subtitle: "Master's degree final-year internship",
+  keywords: ("Kerlyon", "Lorem", "Ipsum"),
+  abstract: lorem(25),
   lang: "en",
   authors: ("Author 1", "Author 2"),
   mentors: ("Mentors 1", "Mentors 2"),
-  logo: none,
+  logo: image("../assets/Logo_CNRS.png", height: 50pt),
   place: "Place of the intership",
   date: "Beginning date",
   table-of-contents: true,
@@ -16,7 +18,7 @@
 = First chapter
 == Section 1
 
-#lorem(200) @harry
+#lorem(200) @code
 
 == Section 2
 
@@ -24,4 +26,6 @@
 
 = Second chapter
 
-#lorem(800)
+#par("Bonum vinum laetificat cor hominis")
+
+#lorem(400)

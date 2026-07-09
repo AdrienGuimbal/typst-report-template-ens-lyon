@@ -1,7 +1,11 @@
-#let blue-light-ens = rgb("#8cc8d2")
-#let blue-dark-ens = rgb("#00778b")
+//#let blue-light-ens = rgb("#8cc8d2")
+//#let blue-dark-ens = rgb("#00778b")
+#let orange-ens = rgb("#d64100")
+#let dark-grey-ens = rgb("#272727")
 
-#let normale-internship(
+
+
+#let ensl-internship(
   title: "",
   subtitle: "",
   lang: "en",
@@ -11,6 +15,8 @@
   place: "",
   logo: none,
   date: "",
+  keywords: (),
+  abstract: "",
   table-of-contents: true,
   bibliography: none, 
   doc,
@@ -46,12 +52,18 @@
     numbering: none,
     {
       if(logo == none) {
-        image("assets/Logo_ENS_PS.jpg", height: 50pt)
-      } else {
         grid(
           columns: (1fr, 1fr),
           align: (left, right),
-          image("assets/Logo_ENS_PS.jpg", height: 50pt),
+          image("assets/Logo_ENS_de_Lyon.png", height: 40pt),
+          image("assets/Logo_L1Ucb.png", height: 50pt)
+        )
+      } else {
+        grid(
+          columns: (1fr, 1fr, 2fr),
+          align: (left, left, right),
+          image("assets/Logo_ENS_de_Lyon.png", height: 40pt),
+          image("assets/Logo_L1Ucb.png", height: 50pt),
           logo
         )
       }
@@ -63,43 +75,66 @@
 
       pad(top: 15pt, text(15pt, fill: black)[#subtitle])
 
-      set align(center)
-      if(authors != none and authors.len() >= 1) {
-        if(authors.len() == 1 and lang == "en") {
-          pad(top: 30pt, strong("Author"))
-        } else if(authors.len() == 1 and lang == "fr"){
-          pad(top: 30pt, strong("Auteur"))
-        } else if(authors.len() != 1 and lang == "en"){
-          pad(top: 30pt, strong("Authors"))
-        } else if(authors.len() != 1 and lang == "fr"){
-          pad(top: 30pt, strong("Auteurs"))
+      grid(
+        columns: (1fr, 1fr),
+        align: (center, center),
+        if(authors != none and authors.len() >= 1) {
+          if(authors.len() == 1 and lang == "en") {
+            pad(top: 30pt, strong("Author"))
+          } else if(authors.len() == 1 and lang == "fr"){
+            pad(top: 30pt, strong("Auteur"))
+          } else if(authors.len() != 1 and lang == "en"){
+            pad(top: 30pt, strong("Authors"))
+          } else if(authors.len() != 1 and lang == "fr"){
+            pad(top: 30pt, strong("Auteurs"))
+          }
+          pad(top: 5pt,
+            grid(
+              columns: authors.len(),
+              gutter: 10%,
+              ..for author in authors { (author,) }
+            )
+          )
+        },
+
+        if(mentors != none and mentors.len() >= 1) {
+          if(mentors.len() == 1 and lang == "en") {
+            pad(top: 10pt, strong("Mentor"))
+          } else if(mentors.len() == 1 and lang == "fr"){
+            pad(top: 10pt, strong("Encadrant"))
+          } else if(mentors.len() != 1 and lang == "en"){
+            pad(top: 10pt, strong("Mentors"))
+          } else if(mentors.len() != 1 and lang == "fr"){
+            pad(top: 10pt, strong("Encadrants"))
+          }
+          pad(top: 5pt,
+            grid(
+              columns: mentors.len(),
+              gutter: 10%,
+              ..for author in mentors { (author,) }
+            )
+          )
+        }
+      )
+      
+      if(keywords != none and keywords.len() > 1) {
+        if(lang == "en"){
+          pad(top: 30pt, strong("Keywords"))
+        } else if(lang == "fr"){
+          pad(top: 30pt, strong("Mots-clefs"))
         }
         pad(top: 5pt,
-          grid(
-            columns: authors.len(),
-            gutter: 10%,
-            ..for author in authors { (author,) }
-          )
+          keywords.join(", ")
         )
       }
 
-      if(mentors != none and mentors.len() >= 1) {
-        if(mentors.len() == 1 and lang == "en") {
-          pad(top: 10pt, strong("Mentor"))
-        } else if(mentors.len() == 1 and lang == "fr"){
-          pad(top: 10pt, strong("Encadrant"))
-        } else if(mentors.len() != 1 and lang == "en"){
-          pad(top: 10pt, strong("Mentors"))
-        } else if(mentors.len() != 1 and lang == "fr"){
-          pad(top: 10pt, strong("Encadrants"))
+      if(abstract != "") {
+        if(lang == "en"){
+          pad(top: 30pt, strong("Abstract"))
+        } else if(lang == "fr"){
+          pad(top: 30pt, strong("Résumé"))
         }
-        pad(top: 5pt,
-          grid(
-            columns: mentors.len(),
-            gutter: 10%,
-            ..for author in mentors { (author,) }
-          )
-        )
+        abstract
       }
 
       set align(center + bottom)
@@ -115,6 +150,7 @@
   doc
 
   if(bibliography != none) {
+    pagebreak()
     bibliography
   }
 }

@@ -1,12 +1,12 @@
 [package]
-name = "ens-internship"
+name = "ens-lyon-internship"
 version = "1.0"
 entrypoint = "lib.typ"
-authors = ["Gavroche"]
+authors = ["Gavroche", "Adrien Guimbal"]
 license = "MIT"
-description = "A unofficial template for internship reports at ENS Paris-Saclay"
-repository = "https://github.com/Gavroche1/typst-report-template-ens/"
-keywords = ["ENS Paris-Saclay", "École normale supérieure", "report", "internship"]
+description = "A unofficial template for internship reports at ENS Lyon"
+repository = "https://github.com/AdrienGuimbal/typst-report-template-ens-lyon"
+keywords = ["ENS", "ENS de Lyon", "École normale supérieure", "report", "internship"]
 categories = ["report"]
 
 [template]
