@@ -1,4 +1,4 @@
-# normale-internship
+# ensl-internship
 An unofficial template for internship reports at ENS de Lyon.
 
 ## Usage
